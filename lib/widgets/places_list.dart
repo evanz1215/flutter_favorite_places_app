@@ -19,7 +19,7 @@ class PlacesList extends StatelessWidget {
         ),
       );
     } else {
-      return ListView.builder(        
+      return ListView.builder(
         itemCount: places.length,
         itemBuilder: (ctx, index) => ListTile(
           leading: CircleAvatar(
@@ -29,6 +29,12 @@ class PlacesList extends StatelessWidget {
           title: Text(
             places[index].title,
             style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  color: Theme.of(context).colorScheme.onBackground,
+                ),
+          ),
+          subtitle: Text(
+            places[index].location.address,
+            style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
           ),
