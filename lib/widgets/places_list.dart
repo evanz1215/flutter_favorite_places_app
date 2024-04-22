@@ -19,9 +19,13 @@ class PlacesList extends StatelessWidget {
         ),
       );
     } else {
-      return ListView.builder(
+      return ListView.builder(        
         itemCount: places.length,
         itemBuilder: (ctx, index) => ListTile(
+          leading: CircleAvatar(
+            radius: 26,
+            backgroundImage: FileImage(places[index].image),
+          ),
           title: Text(
             places[index].title,
             style: Theme.of(context).textTheme.titleMedium!.copyWith(
