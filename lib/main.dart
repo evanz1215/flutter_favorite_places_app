@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_favorite_places_app/screens/places.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,7 +26,8 @@ final theme = ThemeData().copyWith(
   ),
 );
 
-void main() {
+void main() async {
+  await dotenv.load();
   runApp(
     const ProviderScope(
       child: MyApp(),
